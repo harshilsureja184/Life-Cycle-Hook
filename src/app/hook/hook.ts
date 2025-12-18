@@ -26,8 +26,6 @@ export class Hook implements AfterViewInit, OnChanges ,AfterViewChecked,OnInit{
   ngOnInit(): void {
     console.log("Harshil - Constructor")
   }
-  
-
  ngOnChanges()
  {
   console.log("ng on change done by mahek")
