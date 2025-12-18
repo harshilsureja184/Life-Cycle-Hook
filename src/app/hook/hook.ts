@@ -14,6 +14,9 @@ export class Hook {
   constructor() {
     console.log("Constructor")
   }
-
+ngAfterViewInit()
+{
+    console.log("The afterviewinit hook");
+}
 
 }
