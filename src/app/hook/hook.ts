@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook {
+export class Hook implements OnInit {
 
   labelName = 'Life Cycle Hook';
 
