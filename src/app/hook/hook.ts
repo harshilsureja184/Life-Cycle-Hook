@@ -1,4 +1,5 @@
-import { AfterViewInit, Component } from '@angular/core';
+import { AfterViewInit, Component,OnChanges } from '@angular/core';
+
 
 @Component({
   selector: 'app-hook',
@@ -6,7 +7,8 @@ import { AfterViewInit, Component } from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements AfterViewInit {
+export class Hook implements AfterViewInit, OnChanges {
+
 
   labelName = 'Life Cycle Hook';
   labelColor = 'black';
@@ -17,5 +19,9 @@ export class Hook implements AfterViewInit {
   ngAfterViewInit(){
     console.log('ngAfterViewInit')
   }
+ ngOnChanges()
+ {
+  console.log("ng on change done by mahek")
+ }
 
 }
