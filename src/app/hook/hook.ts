@@ -26,10 +26,6 @@ export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnI
   ngAfterContentInit(): void{
     console.log("Tisa-AfterContentInit");
   }
-
-
-
-
   ngDoCheck(): void {
     console.log("ngDoCheck Called")
   }
