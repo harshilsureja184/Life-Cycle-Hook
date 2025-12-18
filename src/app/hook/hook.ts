@@ -1,5 +1,5 @@
 
-import { AfterViewChecked, Component, OnChanges,DoCheck, OnInit,AfterViewInit } from '@angular/core';
+import { AfterViewChecked, Component, OnChanges,DoCheck, OnInit,AfterViewInit, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -7,7 +7,7 @@ import { AfterViewChecked, Component, OnChanges,DoCheck, OnInit,AfterViewInit } 
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnInit,AfterViewInit{
+export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnInit,AfterViewInit,AfterContentInit{
 
 
 
@@ -26,7 +26,9 @@ export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnI
   ngOnInit(): void {
     console.log("Harshil - Constructor")
   }
-  
+  ngAfterContentInit(): void{
+    console.log("Tisa-AfterContentInit");
+  }
 
  
 
