@@ -1,5 +1,5 @@
-import { AfterViewChecked, AfterViewInit, Component, OnChanges, OnInit } from '@angular/core';
 
+import { AfterViewChecked, Component, OnChanges,DoCheck, OnInit,AfterViewInit } from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -7,7 +7,7 @@ import { AfterViewChecked, AfterViewInit, Component, OnChanges, OnInit } from '@
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements  AfterViewInit,AfterViewChecked,OnInit,OnChanges{
+export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnInit,AfterViewInit{
 
 
 
@@ -17,10 +17,9 @@ export class Hook implements  AfterViewInit,AfterViewChecked,OnInit,OnChanges{
   constructor() {
     console.log("Constructor")
   }
-ngAfterViewInit()
-{
-    console.log("The afterviewinit hook");
-}
+  ngAfterViewInit(){
+    console.log('ngAfterViewInit')
+  }
   ngAfterViewChecked(): void {
     console.log('ngAfterViewChecked called');
   }
@@ -29,9 +28,13 @@ ngAfterViewInit()
   }
   
 
- ngOnChanges()
- {
-  console.log("ng on change done by mahek")
-}
+ 
 
+  ngDoCheck(): void {
+    console.log("ngDoCheck Called")
+  }
+
+  ngOnChanges() {
+    console.log("ng on change done by mahek")
+  }
 }
