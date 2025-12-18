@@ -1,4 +1,5 @@
-import { AfterViewChecked, Component, OnChanges } from '@angular/core';
+import { Component , OnInit , OnChanges} from '@angular/core';
+
 
 @Component({
   selector: 'app-hook',
@@ -6,7 +7,7 @@ import { AfterViewChecked, Component, OnChanges } from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements OnChanges,AfterViewChecked{
+export class Hook implements OnInit , OnChanges {
 
 
   labelName = 'Life Cycle Hook';
@@ -15,10 +16,11 @@ export class Hook implements OnChanges,AfterViewChecked{
   constructor() {
     console.log("Constructor")
   }
-  
-  ngAfterViewChecked() {
-    console.log('AdminContact ngAfterViewChecked');
+  ngOnInit(): void {
+    console.log("Harshil - Constructor")
   }
+  
+
  ngOnChanges()
  {
   console.log("ng on change done by mahek")
