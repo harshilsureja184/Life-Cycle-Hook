@@ -1,4 +1,5 @@
-import { Component , OnInit} from '@angular/core';
+import { Component , OnInit , OnChanges} from '@angular/core';
+
 
 @Component({
   selector: 'app-hook',
@@ -6,7 +7,8 @@ import { Component , OnInit} from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements OnInit{
+export class Hook implements OnInit , OnChanges {
+
 
   labelName = 'Life Cycle Hook';
   labelColor = 'black';
@@ -19,5 +21,9 @@ export class Hook implements OnInit{
   }
   
 
+ ngOnChanges()
+ {
+  console.log("ng on change done by mahek")
+ }
 
 }
