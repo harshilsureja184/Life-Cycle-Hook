@@ -1,4 +1,4 @@
-import { Component, DoCheck } from '@angular/core';
+import { Component, DoCheck, OnChanges } from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -6,7 +6,7 @@ import { Component, DoCheck } from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements DoCheck{
+export class Hook implements DoCheck, OnChanges {
 
   labelName = 'Life Cycle Hook';
   labelColor = 'black';
@@ -14,8 +14,12 @@ export class Hook implements DoCheck{
   constructor() {
     console.log("Constructor")
   }
+
   ngDoCheck(): void {
-    console.log("ngDoCheck Called");
+    console.log("ngDoCheck Called")
   }
 
+  ngOnChanges() {
+    console.log("ng on change done by mahek")
+  }
 }
