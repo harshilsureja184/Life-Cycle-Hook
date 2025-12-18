@@ -1,4 +1,4 @@
-import { Component , OnInit} from '@angular/core';
+import { Component, OnInit, AfterContentInit } from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -6,17 +6,28 @@ import { Component , OnInit} from '@angular/core';
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements OnInit {
+export class Hook implements OnInit, AfterContentInit {
 
   labelName = 'Life Cycle Hook';
+  labelColor = 'black';
 
-  constructor()
-  {
+  constructor() {
     console.log("Constructor")
-  } 
-  
+  }
+
   ngOnInit() {
     console.log('Component initialized');
   }
- 
+  ngDoCheck() {
+
+    console.log("DOCHECK  CALLED ")
+
+  }
+  ngAfterContentInit() {
+    console.log('MAHEK CHNAGE DONE ');
+    this.labelName = "CHNAGES TO MAKE";
+    this.labelColor = 'red';
+  }
+
+
 }
