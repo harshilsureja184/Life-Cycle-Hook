@@ -1,5 +1,6 @@
 
-import { AfterViewChecked, Component, OnChanges, DoCheck, OnInit, AfterViewInit } from '@angular/core';
+
+import { AfterViewChecked, Component, OnChanges,DoCheck, OnInit,AfterViewInit, AfterContentInit,OnDestroy } from '@angular/core';
 
 @Component({
   selector: 'app-hook',
@@ -7,7 +8,8 @@ import { AfterViewChecked, Component, OnChanges, DoCheck, OnInit, AfterViewInit 
   templateUrl: './hook.html',
   styleUrl: './hook.css',
 })
-export class Hook implements DoCheck, OnChanges, AfterViewChecked, OnChanges, OnInit, AfterViewInit {
+
+export class Hook implements  DoCheck, OnChanges,AfterViewChecked,OnChanges ,OnInit,AfterViewInit,AfterContentInit,OnDestroy{
   labelName = 'Life Cycle Hook';
   labelColor = 'black';
 
@@ -21,13 +23,22 @@ export class Hook implements DoCheck, OnChanges, AfterViewChecked, OnChanges, On
     console.log('ngAfterViewChecked called');
   }
   ngOnInit(): void {
-    console.log("Harshil - Constructor")
+    console.log("Constructor")
+  }
+  ngAfterContentInit(): void{
+    console.log("Tisa-AfterContentInit");
   }
   ngDoCheck(): void {
     console.log("ngDoCheck Called")
   }
+ ngOnChanges()
+ {
+  console.log("ng on change done by mahek")
+ }
+ ngOnDestroy()
+ {
+  console.log("Destroy")
+ }
 
-  ngOnChanges() {
-    console.log("ng on change done by mahek")
-  }
+  
 }
